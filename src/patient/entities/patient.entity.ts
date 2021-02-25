@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Double, Entity, PrimaryGeneratedColumn } from "typeorm";
 import { CoreEntity } from "src/common/entity/core.entity";
 
 @Entity()
@@ -7,16 +7,16 @@ export class Patient extends CoreEntity{
     @Column()
     age:number;
 
-    @Column()
+    @Column({ type: 'numeric' })
     crp:number;
 
-    @Column()
+    @Column({ type: 'numeric' })
     ldh:number;
 
-    @Column()
+    @Column({ type: 'numeric' })
     hemo:number;
 
-    @Column()
+    @Column({nullable:true})
     result:boolean;
 
 }
